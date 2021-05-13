@@ -1,0 +1,9 @@
+//user schema update 
+users must have color
+users must have bio
+users must have site
+
+
+
+//article schema update
+article must have category

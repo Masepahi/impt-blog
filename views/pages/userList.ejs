@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Impt.Blog</title>
+  </head>
+  <body>
+    <%- include("../partials/header_logged") -%>
+
+    <table class="absolute left-40 top-40">
+        <thead>
+            <th class="pr-24"></th>
+            <th class="pr-24">First Name</th>
+            <th class="pr-24">Last Name</th>
+            <th class="pr-24">User Name</th>
+            <th class="pr-24">Last Update</th>
+            <th class="pr-24">Sex</th>
+            <th class="pr-24">Mobile</th>
+            <th class="pr-24">Email</th>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < users.length; i++) { %>
+                <tr class="border-b-4 mb-5 userRow">
+                    <td class="mb-5">
+                        <img src="../images/<%= users[i].avatar %>" class="w-14 h-14 rounded" alt="">
+                    </td>
+                    <td>
+                        <%= users[i].firstName %>
+                    </td>
+                    <td>
+                        <%= users[i].lastName %>
+                    </td>
+                    <td>
+                        <%= users[i].userName %>
+                    </td>
+                    <td>
+                        <%=  users[i].lastUpdate.getFullYear() %> /
+                        <%=  users[i].lastUpdate.getMonth() %> /
+                        <%=  users[i].lastUpdate.getDate() %>
+
+                    </td>
+                    <td>
+                        <%= users[i].sex %>
+                    </td>
+                    <td>
+                        <%= users[i].mobile %>
+                    </td>
+                    <td>
+                        <%= users[i].email %>
+                    </td>
+
+                    <td>
+                        <div class="flex flex-row">
+                            <a class='text-medium text-gray-400' href="./resetPass/<%= users[i]._id %>"><img src="../images/Swap.svg" alt="" class="w-6 h-6">Reset Password</a>
+                        </div>
+                        <div class="flex flex-row">
+                            <a class='text-medium text-gray-400' href="./deleteSelectedUser/<%= users[i]._id %>"><img src="../images/Delete.svg" alt="" class="w-6 h-6">Delete User</a>
+                        </div>
+                    </td>
+                </tr>
+                
+            <% } %>
+        </tbody>    
+    </table>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="/javascripts/dashboard.js"></script> -->
+  </body>
+</html>

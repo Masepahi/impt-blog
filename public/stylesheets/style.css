@@ -1,0 +1,231 @@
+body {
+  font-family: "Work Sans", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+#getStarted {
+  width: 140px;
+  height: 48px;
+}
+
+#registerContainer {
+  width: 624px;
+  height: 600px;
+}
+
+#signInContainer {
+  width: 624px;
+  height: 340px;
+}
+
+.nameInput {
+  width: 280px;
+}
+
+.inputs {
+  width: 576px;
+}
+
+.inputs:focus {
+  border: none;
+}
+
+#registerTitle {
+  width: 165px;
+  font-size: 40px;
+  line-height: 80px;
+}
+
+#signInTitle {
+  width: 134px;
+  font-size: 40px;
+  line-height: 80px;
+}
+
+#container {
+  margin-top: 110px;
+}
+
+#regBtn {
+  width: 110px;
+  margin-left: 480px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+#signInBtn {
+  width: 110px;
+}
+
+#signInContainer {
+  margin-left: -35px;
+}
+
+#lastWriters {
+  max-width: 468px;
+  max-height: 200px;
+  width: 468px;
+  height: 200px;
+  margin-right: 153px;
+  margin-top: 54px;
+}
+
+
+#nameContainer {
+  width: 77px;
+  margin-left: -5px;
+
+}
+
+
+#userInfo {
+
+  min-width: 468px;
+  width: 468px;
+  height: 250px;
+  margin-right: 153px;
+  margin-top: 54px;
+}
+
+
+#dashboard_userName {
+  font-size: 14px;
+}
+
+
+#avatarDiv {
+  padding-top: 17px;
+}
+
+
+
+
+.inputWrapper {
+  height: 43px;
+  width: 101px;
+  margin-top: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  /*Using a background color, but you can use a background image to represent a button*/
+  background-color: transparent;
+}
+.fileInput {
+  cursor: pointer;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  /*This makes the button huge. If you want a bigger button, increase the font size*/
+  font-size:50px;
+  /*Opacity settings for all browsers*/
+  opacity: 0;
+  -moz-opacity: 0;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0)
+}
+
+.tinymce-container {
+  margin-top: 56px;
+}
+.tinymce-body {
+  width: 730px;
+}
+
+.publishBtn {
+  margin-left: 600px;
+}
+
+.tinymce-heading {
+  width: 730px;
+}
+
+
+.tinymce-container span {
+  font-weight: 900 !important;
+  font-size: 36px !important;
+  line-height: 56px !important;
+  color: #D6D3D1 !important;
+}
+
+.tinymce-container p {
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 26px !important;
+  color: black !important;
+}
+
+
+#articleImage {
+  width: 300px;
+  height: 150px;
+  margin-right: 223px;
+  margin-top: 354px;
+}
+
+#author {
+  width: 384px;
+  height: 30px;
+}
+
+#title {
+  margin-top:  -40px;
+  width: 384px;
+  height: 25px;
+}
+
+
+#text { 
+  margin-top:  -80px;
+  width: 400px;
+  height: 45px;
+}
+
+#btnContainer {
+  margin-top: 20px
+}
+
+
+#articleRmBtn {
+  
+  margin-left: 10px;
+}
+
+
+#article {
+  width: 730px
+}
+
+
+#commentBox {
+  width: 650px;
+  height: 116px;
+}
+
+
+#cmSaveBtn {
+  margin-left: 555px;
+}
+
+
+#userComment {
+  margin-left: -69px;
+}
+
+
+.userRow{ 
+  padding-bottom: 10px;
+}
+
+
+.avatarRm {
+  margin-top: 10px
+}
+
+
+.longInputs {
+  width: 576px;
+  margin-left: -300px;
+}

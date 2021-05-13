@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Impt.Blog - Update Info</title>
+  </head>
+  <body>
+    
+      <%- include("../partials/header_logged") -%>
+
+
+
+    <div class="flex justify-center">
+      <div id="registerContainer" class="bg-gray-50 rounded-lg border-dashed border-2 pl-6 pr-6">
+        <div id='registerTitle' class="font-bold text-gray-400 mt-6 h-20">
+          Profile
+        </div>
+        <div id="avatarContainer" class="flex flex-row">
+          <% if (loggedUser.avatar === undefined || loggedUser.avatar === null) { %>
+            <% let colors = ["#F87171", "#FBBF24", "#34D399", "#818CF8", "#F472B6"] %>
+            <% let randomElement = colors[Math.floor(Math.random() * colors.length)]; %>
+
+            
+            <div class="flex justify-center border-none pt-2 text-xl rounded-2xl border-2 w-16 h-16 text-white" style="background-color: <%= randomElement %>"><%= loggedUser.firstName.charAt(0) %><%= loggedUser.lastName.charAt(0) %></div>
+          <% } else { %>
+            <img id='avatarImg' src="/images/<%= loggedUser.avatar %>" class="w-16 h-16 rounded-2xl border" alt="">
+          <% } %>
+          <form method='post' action='./avatar' enctype="multipart/form-data">
+            <div class="inputWrapper flex flex-row ml-2 font-semibold h-12 w-12 text-sm flex flex-row p-2 border-2 border-gray-400 cursor-pointer rounded-lg">
+              <input class="fileInput" type="file" name="avatar"  onchange="this.form.submit()"/>
+              <img class="ml-5" src="/images/Edit.svg"/><p class="ml-2 font-semibold text-sm" style="margin-top:2px">EDIT</p>
+            </div>
+          </form>
+          <a href="./removeAvatar" class="avatarRm cursor-pointer ml-2 h-11 w-30 font-semibold text-sm flex flex-row p-2 border-2 border-gray-400 text-red-400 rounded-lg bg-transparent"><img class="mr-2" src="/images/Delete.svg"/>REMOVE</a>
+        </div>
+        <form id='updateForm'>
+          <div class="flex flex-wrap -mx-3 mb-6">
+            
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+              <input id="emailInput" class="nameInput mt-4 h-12 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" value='<%= loggedUser.email %>'>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <input id="phoneNumInput" class="nameInput mt-4 h-12 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" value='<%= loggedUser.mobile %>' placeholder="Phone Number">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+              <input id="password" class="inputs mt-4 h-12 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" placeholder="Password">
+              <input id="repassword" class="inputs mt-4 h-12 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" placeholder="Repeat Password">
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+            <input id="userInput" class="longInputs mt-36 h-12 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" value='<%= loggedUser.userName %>' placeholder="User Name">
+            <% if (loggedUser.bio === undefined) { %>
+
+            <input id="bioInput" class="longInputs mt-4 h-20 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" value='Bio' placeholder="Bio">
+            <% } else { %>
+              <input id="bioInput" class="longInputs mt-4 h-20 p-4 rounded-lg placeholder-gray-400 border-gray-300 border-solid border font-medium" type="text" value='<%= loggedUser.bio %>' placeholder="Bio">
+            <% } %>
+        </div>
+        
+        <div class="ml-4 mt-5 flex flex-row">
+            <a href="./deleteUser" id="delBtn" class="h-12 w-44 bg-transparent whitespace-nowrap inline-flex items-center justify-center border rounded-lg uppercase font-semibold text-sm text-red-400" type="button">
+                DELETE MY ACCOUNT
+            </a>
+            <a  class="ml-28 mt-4 font-semibold text-sm">RESET MY PASSWORD</a>
+            <button  id="saveBtn" class="ml-12 h-12 w-20 bg-black whitespace-nowrap inline-flex items-center justify-center border rounded-lg uppercase font-semibold text-sm text-white" type="button">
+                Save
+            </button>
+        </div>
+        </form>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascripts/updateInfo.js"></script>
+  </body>
+</html>
